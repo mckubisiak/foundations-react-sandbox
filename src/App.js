@@ -1,18 +1,44 @@
-import { Component } from 'react';
-import './reset.css';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
-import Header from './Header.js';
-import Body from './Body.js';
-import Footer from './Footer.js';
+import ListPage from "./ListPage";
+import CreatePage from "./CreatePage";
+import DetailsPage from "./DetailsPage";
+
 
 export default class App extends Component {
   render() {
-      return (
-        <div className="App">
-          <Header />
-          <Body />
-          <Footer />
+    return (
+      <Router>
+        <div>
+          <h2>My cool board games</h2>
+          <p><Link to="/">Home</Link></p>
+          <p><Link to="/create">New Marble</Link>
+          </p>
+          <Switch>
+            <Route 
+              path="/" 
+              exact
+              render={(routerProps) => <ListPage {...routerProps} />} 
+            /> 
+              <Route 
+              path="/marbles/:id" 
+              exact
+              render={(routerProps) => <DetailsPage {...routerProps} />} 
+            />
+            <Route 
+              path="/create" 
+              exact
+              render={(routerProps) => <CreatePage {...routerProps} />} 
+            />          
+          </Switch>
         </div>
-      );
-    }
+      </Router>
+    );
+  }
 }

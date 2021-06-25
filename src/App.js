@@ -16,9 +16,9 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <h2>My cool board games</h2>
+          <h2>Marble Mania</h2>
           <p><Link to="/">Home</Link></p>
-          <p><Link to="/create">New Marble</Link>
+          <p><Link to="/create">Craft Marble</Link>
           </p>
           <Switch>
             <Route 

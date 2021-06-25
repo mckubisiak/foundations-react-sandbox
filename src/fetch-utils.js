@@ -30,7 +30,7 @@ export async function createMarble(gameData /* whatever the user put in the form
     return body;
 }
 
-export async function getAllCategories() {
+export async function getAllRaritys() {
     const { body } = await request.get('https://infinite-reaches-27560.herokuapp.com/raritys');
 
     return body;

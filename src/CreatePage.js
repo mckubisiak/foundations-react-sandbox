@@ -33,6 +33,11 @@ export default class CreatePage extends Component {
         this.setState({ cost: e.target.value });
     }
     
+    handleImageChange = e => {
+        this.setState({ image: e.target.value });
+    }
+    
+
     handleSubmit = async e => {
         e.preventDefault();
 
@@ -73,7 +78,6 @@ export default class CreatePage extends Component {
                         Cost
                         <input type='number' onChange={this.handleCostChange} />
                     </label>
-
                     <label>
                         rarity
                         <select onChange={this.handleRarityChange}>

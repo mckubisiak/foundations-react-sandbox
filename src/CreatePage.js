@@ -73,10 +73,7 @@ export default class CreatePage extends Component {
                         Cost
                         <input type='number' onChange={this.handleCostChange} />
                     </label>
-                    <label>
-                        Image
-                        <input type='text' onChange={this.handleImageChange} />
-                    </label>
+
                     <label>
                         rarity
                         <select onChange={this.handleRarityChange}>

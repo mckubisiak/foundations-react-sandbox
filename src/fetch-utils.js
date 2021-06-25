@@ -15,8 +15,7 @@ export async function getOneMarble(id) {
 }
 
 export async function updateMarble(id, gameData) {
-    const { body } = await request
-        .put(`${URL}${id}`)
+    const { body } = await request.put(`${URL}/${id}`)
         .send(gameData);
 
     return body;

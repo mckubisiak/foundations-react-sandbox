@@ -11,7 +11,9 @@ export default class CreatePage extends Component {
         rarity_id: 1,
     }
 
-    handleMarbleChange = e => {
+
+    
+    handleNameChange = e => {
         this.setState({ name: e.target.value });
     }
 
@@ -65,14 +67,14 @@ export default class CreatePage extends Component {
                     </label>
                     <label>
                         Price
-                        <input type='text' onChange={this.handlePriceChange} />
+                        <input type='number' onChange={this.handlePriceChange} />
                     </label>
                     <label>
                         Cost
-                        <input type='text' onChange={this.handleCostChange} />
+                        <input type='number' onChange={this.handleCostChange} />
                     </label>
                     <label>
-                        Complexity
+                        Image
                         <input type='text' onChange={this.handleImageChange} />
                     </label>
                     <label>

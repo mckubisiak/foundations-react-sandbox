@@ -23,11 +23,11 @@ export default class DetailPage extends Component {
             rarity_id: marble.rarity_id,
             cost: marble.cost,
             price: marble.price,
-            raritys: raritys,
+            raritys: raritys
         })
     }
 
-    handleMarbleChange = e => {
+    handleNameChange = e => {
         this.setState({ name: e.target.value });
     }
 
@@ -47,14 +47,19 @@ export default class DetailPage extends Component {
         this.setState({ cost: e.target.value });
     }
 
+    handleImageChange = e => {
+        this.setState({ image: e.target.value });
+    }
+
     handleSubmit = async e => {
         e.preventDefault();
 
         await updateMarble(this.props.match.params.id, {
             name: this.state.name,
+            image: this.state.image,
             description: this.state.description,
             price: this.state.price,
-            const: this.state.const,
+            cost: this.state.cost,
             rarity_id: this.state.rarity_id
         });
         this.props.history.push('/')
@@ -73,14 +78,17 @@ export default class DetailPage extends Component {
                         Description
                         <input value={this.state.description} onChange={this.handleDescriptionChange} />
                     </label>
-
+                    <label>
+                        Image
+                        <input value={this.state.image} onChange={this.handleImageChange} />
+                    </label>
                     <label>
                         Price
-                        <input value={this.state.price} onChange={this.handlePriceChange} />
+                        <input type='number' value={this.state.price} onChange={this.handlePriceChange} />
                     </label>
-
+                        Cost
                     <label>
-                        <input value={this.state.cost} onChange={this.handleCostChange} />
+                        <input type='number' value={this.state.cost} onChange={this.handleCostChange} />
                     </label>
 
                     <label>

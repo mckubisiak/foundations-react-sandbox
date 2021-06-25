@@ -18,12 +18,12 @@ export default class ListPage extends Component {
                 {
                     this.state.marbleBag.map(marble => <Link to={`/Marbles/${marble.id}`}>
                     <div className="marble">
-                        <p>{marble.name}</p>
-                        <p>{marble.image}</p>
-                        <p>{marble.description}</p>
-                        <p>{marble.rarity_id}</p>
-                        <p>{marble.price}</p>
-                        <p>{marble.cost}</p>
+                        <div>{marble.name}</div>
+                        <div>{marble.image}</div>
+                        <div>{marble.description}</div>
+                        <div>{marble.rarity_id}</div>
+                        <div>{marble.price}</div>
+                        <div>{marble.cost}</div>
                     </div>
                     </Link>)
                 }
